@@ -5,8 +5,14 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:BarcodeScanner"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="BarcodeScanner" Height="450" Width="800"
+        Loaded="MainWindow_OnLoaded"
+        ResizeMode="CanMinimize"
+        Background="#dce775">
     <Grid>
-        
+        <TextBox MaxLength="13" AcceptsReturn="False" TextWrapping="NoWrap" Name="BarCodeTextBox" HorizontalAlignment="Left" Height="129" Margin="80,143,0,0"  VerticalAlignment="Top" Width="628" Grid.ColumnSpan="2" Background="#ffffa6" Foreground="#a8b545" FontSize="50" FontWeight="Bold"/>
+        <Button Click ="ClearButtonClick" Content="Wyczyść" HorizontalAlignment="Left" Margin="124,317,0,0" VerticalAlignment="Top" Width="188" Height="58" Background="#a8b545" FontSize="30" FontWeight="Bold" Foreground="#475800" Grid.ColumnSpan="2"/>
+        <TextBlock  HorizontalAlignment="Right" Margin="0,41,170,0" TextWrapping="Wrap" Text="Zeskanuj kod " VerticalAlignment="Top" Height="55" Width="382" Foreground="#475800" FontSize="40" FontWeight="ExtraBold" Grid.ColumnSpan="2"/>
+        <Button Click ="SendButtonClick" Content="Wyślij" HorizontalAlignment="Left" Margin="464,317,0,0" VerticalAlignment="Top" Width="188" Height="58" Background="#a8b545" FontSize="30" FontWeight="Bold" Foreground="#475800"/>
     </Grid>
 </Window>

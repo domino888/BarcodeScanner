@@ -20,9 +20,32 @@ namespace BarcodeScanner
     /// </summary>
     public partial class MainWindow : Window
     {
+        private String content = null; 
+
         public MainWindow()
         {
             InitializeComponent();
+        }
+
+        private void SendButtonClick(object sender, RoutedEventArgs e)
+        {
+            content = "Wysłano kod: " + BarCodeTextBox.Text;
+            MessageBox.Show(content);
+            BarCodeTextBox.Text = "";
+            BarCodeTextBox.Focus();
+        }
+
+        private void ClearButtonClick(object sender, RoutedEventArgs e)
+        {
+            BarCodeTextBox.Text = "";
+            BarCodeTextBox.Focus();
+        }
+
+
+        private void MainWindow_OnLoaded(object sender, RoutedEventArgs e)
+        {
+            BarCodeTextBox.Focus();
+            
         }
     }
 }
